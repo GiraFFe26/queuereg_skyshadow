@@ -146,7 +146,7 @@ class DigisellerApi:
                 }
         try:
             r = requests.post(f'https://api.digiseller.ru/api/seller-sells/v2?token={token}', headers=headers, json=json_data).json()
-        except (ConnectTimeout, ReadTimeout):
+        except:
             r = requests.post(f'https://api.digiseller.ru/api/seller-sells/v2?token={token}', headers=headers, json=json_data).json()
         for i in r['rows']:
             invoice_id = i['invoice_id']
